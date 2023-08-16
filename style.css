@@ -21,36 +21,35 @@ body {
 
 }
 
-
-.main {
+/* 
+main {
     height: 100vh;
+} */
+
+.centered-text {
+    text-align: center;
 }
 
 section {
     display: grid;
     place-items: center;
     align-content: center;
-    min-height: 70vh;
+    min-height: 20vh;
 
-    /* min-height: 90vh; */
-    /* border: 1px solid red; */
-    /* scroll-snap-align: start; */
-
-    /* border: 1px solid darkcyan; */
-}
-
-section:not(.logo-section) {
     padding-left: 30px;
     padding-right: 30px;
+
+    padding-bottom: 2rem;
 }
 
 section.points-section {
-    min-height: 10vh;
-    & img {
-        width: 15px;
-    }
+    min-height: 20vh;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
-    margin-bottom: 80px;
+    & img {
+        width: 40px;
+    }
 }
 
 
@@ -68,14 +67,23 @@ section.points-section {
     height: 100vh;
 
     & .scroll-down-icon {
-        align-self: self-end;
+        align-self: center;
+        transition: all 1s ease-in ;
+        transition-delay: 2s;
     }
+
+    display: grid;
+    grid-template-rows: 2fr 10%;
 }
 
+.logo-addition {
+    font-size: 40px;
+    font-size: 3vw;
+}
 
 .three-step-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 400px));
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
 }
 
@@ -86,11 +94,13 @@ section.points-section {
     align-items: center;
     text-align: center;
 
+    padding: 1rem;
+
     border: 2px solid var(--accent2-color);
     border-radius: 10px;
 
-    & .grid-step-icon {
-        border-radius: 30px;
+    & .grid-step-icon > img {
+        width: 20%;         
     }
 
     & .grid-step-title {
@@ -98,13 +108,52 @@ section.points-section {
         font-size: 1.5rem;
         margin: 24px 0 16px;
     }
-}
 
-.main-beat-element-icon {
-    & img {
-        /* width: 50px; */
+    & .grid-step-description {
+        max-width: 90%;
     }
 }
+
+
+@media screen and (max-width: 1300px) {
+    .three-step-grid {
+        width: 100%;
+    }
+
+    .grid-step .grid-step-icon > img {
+        width: 15%;        
+    }
+
+
+    .grid-step {
+        grid-column: 1 / 4;
+
+        & .grid-step-description {
+            max-width: 90%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .three-step-grid {
+        width: 100%;
+    }
+
+    .grid-step .grid-step-icon > img {
+        width: 40%;           
+    }
+
+    .grid-step {
+        grid-column: 1 / 4;
+
+        & .grid-step-description {
+            max-width: 100%;
+        }
+    }
+}
+
+
 
 
 .main-beat-content {
@@ -152,6 +201,7 @@ section.points-section {
     .main-beat-element-title {
         grid-column: 2 / 4;
         margin-top: unset;
+        padding-bottom: 1rem;
     }
 
     .main-beat-element-content {
@@ -165,7 +215,11 @@ section.points-section {
     }
 }
 
-
+.brave-software-developers-section,
+.engineering-section {
+    grid-template-columns: 80%;
+    justify-content: center;
+}
 
 .offbeats-method-section {
     background-color: var(--foreground-color);
@@ -184,6 +238,10 @@ section.points-section {
 
 
 @media screen and (min-width: 1920px) {
+    .three-step-grid {
+        width: 50%;
+    }
+
     .offbeats-method-section  {
         grid-template-columns: 50%;
     }
@@ -264,7 +322,7 @@ section.points-section {
 
 .offbeat-mentioning {
     color: var(--accent1-color);
-    font-weight: 600;
+    font-weight: 900;
 }
 
 footer {
@@ -353,33 +411,58 @@ footer {
 .contact-button-group {
     display: flex;
     flex-direction: column;
+
+    min-width: 25%;
+    
     gap: 1rem;
 }
 
 .contact-button {
     display: flex;
-    width: 300px;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    /* width: 300px; */
 
     background-color: var(--accent2-color);
     color: var(--background-color);
     
     border-radius: 10px;
     padding: 1rem;
-    /* text-align: center; */
 
     align-content: baseline;
+    justify-content: center;
 
     text-decoration: none;
+    transition: background-color  200ms linear;
+}
 
-    /* justify-content: space-around; */
+.contact-button:hover {
+    background-color: var(--foreground-color);
 }
 
 .contact-button-icon {
-    flex: 1 0 30%;
+    flex: 0 0 20%;
     text-align: center;
 }
 
 .contact-button-text {
-    flex: 1 0 70%;
+    white-space: nowrap;
+    text-align: center;
+    flex: 0 0 70%;
 }
 
+
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+    transform: translateY(0);
+}

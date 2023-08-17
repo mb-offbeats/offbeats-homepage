@@ -11,9 +11,11 @@
 
 body {
     background-color: var(--background-color);
-    color: #000;
+    color: var(--foreground-color);
     font-family: 'Comfortaa', sans-serif;
-    font-size: 1.1rem;
+    
+    
+    font-size: 1.2rem;
     line-height: 1.5;
 
     padding: 0;
@@ -233,7 +235,8 @@ section.points-section {
 
 
 @media screen and (min-width: 1920px) {
-    .three-step-grid {
+    .three-step-grid,
+    .main-beat-content {
         width: 50%;
     }
 

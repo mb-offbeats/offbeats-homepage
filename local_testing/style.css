@@ -507,13 +507,13 @@ footer .footer-link:hover {
 
 
 /*************** IMPRESSUM *******************/
-.impressum-container {
+.terms-container {
     display: flex;
     flex-flow: column wrap;
-    font-size: 1rem;
+    /* font-size: 1rem; */
 }
 
-.impressum-container .back_button {
+.terms-container .back_button {
     color: var(--foreground-color);
     text-decoration: none;
     display: flex;
@@ -522,13 +522,13 @@ footer .footer-link:hover {
     transition: all 500ms ease-in-out;
 }
 
-.impressum-container .back_button:hover {
+.terms-container .back_button:hover {
     > span:last-child {
         text-decoration: underline;
     }
 }
 
-.impressum-header {
+.terms-header {
     display: flex;
     flex-direction: column-reverse;
     /* flex-wrap: wrap-reverse; */
@@ -544,7 +544,7 @@ footer .footer-link:hover {
     padding: 2rem;
 }
 
-.impressum-header > h1 {
+.terms-header > h1 {
     font-size: calc(16px + 2vw);
     min-width: 150px;
     justify-content: center;
@@ -552,16 +552,16 @@ footer .footer-link:hover {
     text-align: center;
 }
 
-.impressum-header > .logo {
+.terms-header > .logo {
     justify-self: flex-end;
 }
 
-.impressum-header > .logo > img {
+.terms-header > .logo > img {
     min-width: 150px;
     width: 2vw;
 }
 
-.impressum-content {
+.terms-content {
     padding: 2rem;
     width: 50%;
 
@@ -585,7 +585,7 @@ footer .footer-link:hover {
 
 
 @media screen and (max-width: 630px) {
-    .impressum-content {
+    .terms-content {
         width: 80%;
     }
 }

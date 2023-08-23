@@ -50,10 +50,9 @@ section.points-section {
 
     & img {
         min-width: 10px;
-        width: 2vw;
+        width: 1.5vw;
     }
 }
-
 
 .section-header {
     text-align: center;
@@ -69,7 +68,8 @@ section.points-section {
 
     & .scroll-down-icon {
         align-self: center;
-        transition: all 1s ease-in 1s;
+        scale: 0;
+        animation: logo-addition-animations 500ms 2s forwards;
     }
 }
 
@@ -91,6 +91,23 @@ section.points-section {
     font-size: calc(12px + 1.5vw);
     min-width: 200px;
     text-align: center;
+
+    /* scale: 0; */
+    visibility: hidden;
+    filter: blur(0);
+    animation: logo-addition-animations 1s 500ms forwards;
+}
+
+@keyframes logo-addition-animations {
+    0% {
+        transform: translateY(150%);
+        filter: blur(10px);
+    }
+    100% {
+        transform: translateY(0);
+        scale: 1;
+        visibility: visible;
+    }
 }
 
 .three-step-grid {
@@ -124,43 +141,6 @@ section.points-section {
 
     & .grid-step-description {
         max-width: 90%;
-    }
-}
-
-@media screen and (min-width: 1300px) {
-    .grid-step .grid-step-icon>img {
-        min-width: 50px;
-        width: 2vw;
-    }
-}
-
-
-@media screen and (min-width: 600px) and (max-width: 1300px) {
-    .three-step-grid {
-        width: 100%;
-    }
-
-    .grid-step {
-        grid-column: 1 / 4;
-
-        & .grid-step-description {
-            max-width: 90%;
-        }
-    }
-}
-
-
-@media screen and (max-width: 600px) {
-    .three-step-grid {
-        width: 100%;
-    }
-
-    .grid-step {
-        grid-column: 1 / 4;
-
-        & .grid-step-description {
-            max-width: 100%;
-        }
     }
 }
 
@@ -403,10 +383,11 @@ footer .footer-link:hover {
 .contact-button-group {
     display: flex;
     flex-direction: column;
-
-    min-width: 25%;
-
     gap: 1rem;
+
+    min-width: 200px;
+    max-width: 400px;
+    width: 20%;
 }
 
 .contact-button {
@@ -414,13 +395,15 @@ footer .footer-link:hover {
     flex-grow: 1;
     flex-wrap: wrap;
 
+    font-size: calc(10px + 0.5vw);
+
     background-color: var(--accent2-color);
     color: var(--background-color);
 
     border-radius: 10px;
     padding: 1rem;
 
-    align-content: baseline;
+    align-items: center;
     justify-content: center;
 
     text-decoration: none;
@@ -431,9 +414,11 @@ footer .footer-link:hover {
     background-color: var(--foreground-color);
 }
 
-.contact-button-icon {
-    flex: 0 0 20%;
+.contact-button .contact-button-icon {
+    flex-grow: 1;
     text-align: center;
+    font-size: calc(10px + 1vw);
+    align-self: center;
 }
 
 .contact-button-text {
@@ -510,7 +495,7 @@ footer .footer-link:hover {
 .terms-container {
     display: flex;
     flex-flow: column wrap;
-    /* font-size: 1rem; */
+    font-size: 1rem;
 }
 
 .terms-container .back_button {
@@ -584,8 +569,50 @@ footer .footer-link:hover {
 }
 
 
+
+@media screen and (min-width: 1300px) {
+    section.points-section > img {
+        min-width: 10px;
+        width: 1vw;
+    }
+
+    .grid-step .grid-step-icon>img {
+        min-width: 50px;
+        width: 2vw;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1300px) {
+    .three-step-grid {
+        width: 100%;
+    }
+
+    .grid-step {
+        grid-column: 1 / 4;
+
+        & .grid-step-description {
+            max-width: 90%;
+        }
+    }
+}
+
 @media screen and (max-width: 630px) {
     .terms-content {
         width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .three-step-grid {
+        width: 100%;
+    }
+
+    .grid-step {
+        grid-column: 1 / 4;
+
+        & .grid-step-description {
+            max-width: 100%;
+        }
     }
 }

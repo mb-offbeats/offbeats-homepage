@@ -73,6 +73,9 @@ section.points-section img {
     grid-template-rows: 40%;
 
     justify-items: center;
+
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .logo-section .scroll-down-icon {
@@ -106,6 +109,9 @@ section.points-section img {
     font-size: calc(12px + 1.5vw);
     min-width: 200px;
     text-align: center;
+    
+    user-select: none;
+    cursor: default;
 
     visibility: hidden;
     filter: blur(0);

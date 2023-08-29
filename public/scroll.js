@@ -2,7 +2,7 @@ const hiddenIconsObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         entry.target.classList.toggle('show', entry.isIntersecting);
     });
-}, {threshold: 0.8});
+}, { threshold: 0.8 });
 
 const cardsAppearingObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -12,7 +12,7 @@ const cardsAppearingObserver = new IntersectionObserver((entries) => {
             entry.target.classList.add("visible-card");
         }
     });
-}, {threshold: 0.5});
+}, { threshold: 0.5 });
 
 const cardsDisappearingObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -22,7 +22,7 @@ const cardsDisappearingObserver = new IntersectionObserver((entries) => {
             entry.target.classList.remove("visible-card");
         }
     });
-}, {threshold: 0.4, rootMargin: '5%'});
+}, { threshold: 0.4, rootMargin: '5%' });
 
 
 const hiddenIconElements = document.querySelectorAll('.hidden-icon');
@@ -31,3 +31,9 @@ const hiddenCardElements = document.querySelectorAll('.hidden-card');
 hiddenIconElements.forEach(el => hiddenIconsObserver.observe(el));
 hiddenCardElements.forEach(el => cardsAppearingObserver.observe(el));
 hiddenCardElements.forEach(el => cardsDisappearingObserver.observe(el));
+
+
+document.querySelector('.scroll-down-icon .material-symbols-outlined')
+        .addEventListener('click', () => { 
+            window.scrollTo({ top: document.querySelector('.logo-section').offsetHeight, behaviour: 'smooth' }) 
+        });

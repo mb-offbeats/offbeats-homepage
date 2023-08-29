@@ -15,11 +15,14 @@
     --font-size-offbeats-card-header: 2rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--background-color);
     color: var(--foreground-color);
     font-family: 'Comfortaa', sans-serif;
-
 
     font-size: var(--font-size);
     line-height: var(--line-height);
@@ -39,14 +42,15 @@ section {
     align-content: center;
     min-height: 20vh;
 
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 0 30px;
 
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
 }
 
 section.points-section {
     gap: 1rem;
+    min-height: unset;
+    padding: 10vh 0;
 }
 
 section.points-section img {
@@ -63,7 +67,6 @@ section.points-section img {
     color: var(--foreground-color);
     height: 100vh;
     display: grid;
-    /* grid-template-rows: 90% 10%; */
     grid-template-rows: 40%;
 
     justify-items: center;
@@ -73,6 +76,11 @@ section.points-section img {
     align-self: center;
     scale: 0;
     animation: logo-addition-animations 500ms 2s forwards;
+    cursor: pointer;
+
+    > .material-symbols-outlined {
+        font-size: calc(30px + 1vw);
+    }
 }
 
 .logo {
@@ -81,7 +89,6 @@ section.points-section img {
     align-items: center;
 
     gap: 2rem;
-
 }
 
 .logo>img {
@@ -101,10 +108,12 @@ section.points-section img {
 
 @keyframes logo-addition-animations {
     0% {
+        opacity: 0;
         transform: translateY(150%);
         filter: blur(10px);
     }
     100% {
+        opacity: 1;
         transform: translateY(0);
         scale: 1;
         visibility: visible;
@@ -405,13 +414,16 @@ footer .footer-link:hover {
     flex-grow: 1;
     flex-wrap: wrap;
 
-    font-size: calc(10px + 0.5vw);
+    /* font-size: calc(10px + 1vw); */
 
-    background-color: var(--accent2-color);
-    color: var(--background-color);
+    /* background-color: var(--accent2-color); */
+    /* color: var(--background-color); */
+
+    color: var(--accent2-color);
 
     border-radius: 10px;
-    padding: 1rem;
+    padding: 0.5rem;
+    overflow: hidden;
 
     align-items: center;
     justify-content: center;
@@ -421,13 +433,15 @@ footer .footer-link:hover {
 }
 
 .contact-button:hover {
-    background-color: var(--foreground-color);
+    /* background-color: var(--foreground-color); */
+    background-color: var(--accent2-color);
+    color: var(--background-color);
 }
 
 .contact-button .contact-button-icon {
     flex-grow: 1;
     text-align: center;
-    font-size: calc(10px + 1vw);
+    /* font-size: calc(10px + 1vw); */
     align-self: center;
 }
 
@@ -435,7 +449,7 @@ footer .footer-link:hover {
     white-space: nowrap;
     text-align: center;
     flex: 0 0 70%;
-    color: var(--background-color);
+    /* color: var(--background-color); */
 }
 
 
@@ -492,6 +506,26 @@ footer .footer-link:hover {
     /* visibility: visible; */
     animation: card-appearing 500ms forwards;
 }
+
+/** !!!!!!!!!!!!!!!! IMPORATANT !!!!!!!!!!! in future, 
+see https://developer.mozilla.org/en-US/docs/Web/CSS/view-timeline **/
+/** https://www.youtube.com/shorts/p8HPqBVp9lI **/
+/**
+/* @keyframes card-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(5vh);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .hidden-card {
+        view-timeline-name: --item-timeline;
+        animation: card-fade-in both;
+        animation-timeline: --item-timeline;
+        animation-range: contain 0% contain 50%;
+    }
+} */
 
 .show {
     opacity: 1;
@@ -592,6 +626,10 @@ footer .footer-link:hover {
         min-width: 50px;
         width: 2vw;
     }
+
+    .logo-section {
+        grid-template-rows: 90%;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1300px) {
@@ -605,6 +643,10 @@ footer .footer-link:hover {
 
     .grid-step .grid-step-description {
         max-width: 90%;
+    }
+
+    .logo-section {
+        grid-template-rows: 90%;
     }
 }
 

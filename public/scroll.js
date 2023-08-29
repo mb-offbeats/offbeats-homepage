@@ -33,7 +33,7 @@ hiddenCardElements.forEach(el => cardsAppearingObserver.observe(el));
 hiddenCardElements.forEach(el => cardsDisappearingObserver.observe(el));
 
 
-document.querySelector('.scroll-down-icon .material-symbols-outlined')
+document.querySelector('.scroll-down-icon')
         .addEventListener('click', () => { 
             window.scrollTo({ top: document.querySelector('.logo-section').offsetHeight, behaviour: 'smooth' }) 
         });

@@ -573,10 +573,21 @@ see https://developer.mozilla.org/en-US/docs/Web/CSS/view-timeline **/
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /*align-items: center;*/
     align-self: center;
 
     line-break: normal;
+
+    h3 {
+        margin-top: 3rem;
+        margin-bottom: 0.25rem;
+    }
+
+    h4 {
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
 }
 
 .impressum-entry {

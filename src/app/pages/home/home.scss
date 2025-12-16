@@ -1,0 +1,38 @@
+/* Optional: keep transforms smooth on the horizontal track */
+#expertise-track {
+  will-change: transform;
+
+  /* make all items stretch to the same height */
+  align-items: stretch;
+}
+
+.expertise-card {
+  /* same height for all cards */
+  height: 24rem; /* adjust to taste */
+  display: flex;
+  flex-direction: column;
+
+  /* nicer spacing distribution (icon+title top, text grows) */
+  justify-content: flex-start;
+}
+
+.expertise-card p {
+  /* ensures the paragraph takes remaining space consistently */
+  flex: 1 1 auto;
+}
+
+///* Responsive tuning */
+//@media (min-width: 768px) {
+//  .expertise-card {
+//    height: 15rem;
+//  }
+//}
+
+
+/* Initial state to prevent flash on reload */
+.hero-text-wrapper,
+.hero-fade-up {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0); /* matches your fade-up idea */
+  will-change: transform, opacity;
+}

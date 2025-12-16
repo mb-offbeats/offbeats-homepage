@@ -1,8 +1,6 @@
 {
   "projects": {
-    "dev": "homepage-test-d7cb8",
+    "dev": "offbeats-h-v1",
     "production": "offbeats-website"
-  },
-  "targets": {},
-  "etags": {}
+  }
 }

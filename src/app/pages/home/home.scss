@@ -1,4 +1,3 @@
-/* Optional: keep transforms smooth on the horizontal track */
 #expertise-track {
   will-change: transform;
 
@@ -8,7 +7,7 @@
 
 .expertise-card {
   /* same height for all cards */
-  height: 24rem; /* adjust to taste */
+  //height: 24rem; /* adjust to taste */
   display: flex;
   flex-direction: column;
 
@@ -16,18 +15,40 @@
   justify-content: flex-start;
 }
 
-.expertise-card p {
-  /* ensures the paragraph takes remaining space consistently */
-  flex: 1 1 auto;
-}
-
-///* Responsive tuning */
-//@media (min-width: 768px) {
-//  .expertise-card {
-//    height: 15rem;
-//  }
+//.expertise-card p {
+//  /* ensures the paragraph takes remaining space consistently */
+//  flex: 1 1 auto;
 //}
 
+/* --- NEW: Vertical step cards layout --- */
+#expertise-steps {
+  will-change: transform;
+}
+
+.expertise-step {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  will-change: transform, opacity;
+  pointer-events: none; /* prevents weird hover while overlapping */
+}
+
+.step-left {
+  left: 3vw;
+}
+
+.step-right {
+  right: 3vw;
+}
+
+@media (max-width: 767px) {
+  .step-left,
+  .step-right {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
 
 /* Initial state to prevent flash on reload */
 .hero-text-wrapper,

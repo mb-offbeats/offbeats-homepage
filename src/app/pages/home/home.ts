@@ -209,23 +209,53 @@ export class Home implements AfterViewInit, OnDestroy {
   // ... (Other functions initExpertiseScroll, initAboutUsReveal, etc. remain unchanged) ...
 
   private initExpertiseScroll() {
-    const track = document.getElementById('expertise-track');
-    if (track) {
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: '#what-we-do',
-          start: 'top top',
-          end: '+=3500',
-          pin: true,
-          scrub: 1,
-          invalidateOnRefresh: true,
-        },
-      }).to('#expertise-track', {
-        x: () => -(track.scrollWidth - window.innerWidth),
-        ease: 'none',
+    const stepsWrap = document.getElementById('expertise-steps');
+    if (!stepsWrap) return;
+
+    const steps = Array.from(stepsWrap.querySelectorAll<HTMLElement>('.expertise-step'));
+    if (steps.length === 0) return;
+
+    const isMobile = () => window.matchMedia('(max-width: 767px)').matches;
+
+    // Put all cards in the same vertical "stage" (centered), then animate them one by one.
+    steps.forEach((el) => {
+      const isRight = el.classList.contains('step-right');
+      const xFrom = () => (isMobile() ? 0 : (isRight ? 120 : -120));
+
+      gsap.set(el, {
+        opacity: 0,
+        yPercent: -50,  // anchor at vertical center (top: 50%)
+        y: 40,
+        x: xFrom(),
+        rotate: isMobile() ? 0 : (isRight ? 2 : -2),
       });
-    }
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#what-we-do',
+        start: 'top top',
+        end: `+=${Math.max(2400, steps.length * 900)}`,
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    steps.forEach((el, i) => {
+      // Bring current card in
+      tl.to(el, { opacity: 1, y: 0, x: 0, rotate: 0, duration: 0.6, ease: 'power3.out' });
+
+      // Small "hold" so it reads like a step
+      tl.to({}, { duration: 0.25 });
+
+      // Fade the previous card out (except for the last one)
+      if (i < steps.length - 1) {
+        tl.to(el, { opacity: 0, y: -60, duration: 0.5, ease: 'power2.in' });
+      }
+    });
   }
+
 
   private initAboutUsReveal() {
     gsap.to('.gsap-fade-up', {

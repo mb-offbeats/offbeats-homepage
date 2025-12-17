@@ -76,8 +76,9 @@
       </h2>
     </div>
 
-    <div id="expertise-track" class="flex items-center gap-10 px-[10vw] w-max translate-x-[90vw]">
-      <div class="expertise-card w-[85vw] md:w-[25vw] min-w-[300px] bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 flex flex-col gap-6">
+    <!-- Vertical "steps" container (cards are stacked via animation, not by normal flow) -->
+    <div id="expertise-steps" class="relative w-full max-w-7xl mx-auto px-4 md:px-40 h-[70vh]">
+      <div class="expertise-card expertise-step step-left w-[85vw] md:w-[60vw] lg:w-[40vw] min-w-[300px] bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 flex flex-col gap-6">
         <span class="material-symbols-outlined text-primary text-6xl">layers</span>
         <h3 class="font-display text-[clamp(1.5rem,2.2vw,1.875rem)] leading-[1.1] font-bold">
           {{ t().expertise.arch.title }}
@@ -85,7 +86,7 @@
         <p class="text-slate-500 text-lg">{{ t().expertise.arch.desc }}</p>
       </div>
 
-      <div class="expertise-card w-[85vw] md:w-[25vw] min-w-[300px] bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 flex flex-col gap-6">
+      <div class="expertise-card expertise-step step-right w-[85vw] md:w-[40vw] min-w-[300px] bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 flex flex-col gap-6">
         <span class="material-symbols-outlined text-primary text-6xl">code</span>
         <h3 class="font-display text-[clamp(1.5rem,2.2vw,1.875rem)] leading-[1.1] font-bold">
           {{ t().expertise.bespokeDev.title }}
@@ -93,7 +94,7 @@
         <p class="text-slate-500 text-lg">{{ t().expertise.bespokeDev.desc }}</p>
       </div>
 
-      <div class="expertise-card w-[85vw] md:w-[25vw] min-w-[300px] bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 flex flex-col gap-6">
+      <div class="expertise-card expertise-step step-left w-[85vw] md:w-[40vw] min-w-[300px] bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 flex flex-col gap-6">
         <span class="material-symbols-outlined text-primary text-6xl">hub</span>
         <h3 class="font-display text-[clamp(1.5rem,2.2vw,1.875rem)] leading-[1.1] font-bold">
           {{ t().expertise.legacy.title }}
@@ -101,7 +102,7 @@
         <p class="text-slate-500 text-lg">{{ t().expertise.legacy.desc }}</p>
       </div>
 
-      <div class="expertise-card w-[85vw] md:w-[25vw] min-w-[300px] bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 flex flex-col gap-6">
+      <div class="expertise-card expertise-step step-right w-[85vw] md:w-[40vw] min-w-[300px] bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 flex flex-col gap-6">
         <span class="material-symbols-outlined text-primary text-6xl">cloud_upload</span>
         <h3 class="font-display text-[clamp(1.5rem,2.2vw,1.875rem)] leading-[1.1] font-bold">
           {{ t().expertise.cloud.title }}

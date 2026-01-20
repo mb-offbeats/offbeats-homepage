@@ -1,0 +1,38 @@
+<section id="contact" class="py-32 relative overflow-hidden bg-gradient-to-br from-brand-primary to-brand-dark">
+
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <svg width="100%" height="100%">
+      <pattern id="cta-grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="2" fill="white"/>
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#cta-grid)"/>
+    </svg>
+  </div>
+
+  <!--    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/20 rounded-full blur-[120px] pointer-events-none"></div>-->
+
+  <div class="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+
+    <div class="gsap-scale-up-cta">
+      <span class="text-white/80 font-bold tracking-widest uppercase text-sm mb-6 block font-display">
+          {{ t().startProject.badge }}
+      </span>
+
+      <h2 class="font-display text-white text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight drop-shadow-lg">
+        {{ t().startProject.title }}
+      </h2>
+
+      <p class="text-white/90 text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-body font-light leading-relaxed">
+        {{ t().startProject.desc }}
+      </p>
+
+      <a
+        [href]="'mailto:office@offbeats.at?subject=' + t().startProject.emailSubject + '&body=' + t().startProject.emailBody"
+        class="group inline-flex items-center gap-3 bg-white text-brand-primary rounded-full px-10 py-5 text-xl
+        font-bold shadow-2xl hover:bg-brand-bg hover:scale-105 hover:shadow-white/20 transition-all duration-300">
+        {{ t().startProject.cta }}
+      </a>
+    </div>
+
+  </div>
+</section>

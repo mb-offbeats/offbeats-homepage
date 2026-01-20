@@ -3,10 +3,9 @@ import {LanguageService} from '../../services/language.service';
 import {TranslationBaseComponent} from '../../utils/translation.component';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'app-keywords',
   imports: [],
-  templateUrl: './contact.html',
-  styleUrl: './contact.scss',
-  host: {'class': 'w-full'}
+  templateUrl: './keywords.html',
+  styleUrl: './keywords.scss',
 })
-export class Contact extends TranslationBaseComponent {}
+export class Keywords extends TranslationBaseComponent {}

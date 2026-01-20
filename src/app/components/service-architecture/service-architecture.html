@@ -1,0 +1,90 @@
+<section id="architecture" class="py-32 bg-white relative">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-20">
+            <span class="text-brand-primary font-bold tracking-widest uppercase text-sm mb-2 block font-display">
+                {{ t().services.architecture.badge }}
+            </span>
+      <h2 class="font-display font-bold text-4xl md:text-5xl text-brand-accent mb-6 leading-tight">
+        {{ t().services.architecture.title.line1 }}<br>
+        <span class="text-brand-primary">{{ t().services.architecture.title.line2 }}</span>
+      </h2>
+      <p class="text-lg mb-8 leading-relaxed" [innerHTML]="t().services.architecture.description">
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+
+      <div
+        class="bg-brand-bg p-6 rounded-2xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 text-center group">
+        <div
+          class="w-12 h-12 mx-auto bg-white text-brand-primary rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-2xl">view_quilt</span>
+        </div>
+        <h3
+          class="font-display font-bold text-lg text-brand-accent mb-2">{{ t().services.architecture.microFrontends.title }}</h3>
+        <p class="text-sm text-brand-text/70 leading-relaxed">
+          {{ t().services.architecture.microFrontends.description }}
+        </p>
+      </div>
+
+      <div
+        class="bg-brand-bg p-6 rounded-2xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 text-center group">
+        <div
+          class="w-12 h-12 mx-auto bg-white text-brand-accent rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-2xl">dns</span>
+        </div>
+        <h3 class="font-display font-bold text-lg text-brand-accent mb-2">
+          {{ t().services.architecture.microservices.title }}
+        </h3>
+        <p class="text-sm text-brand-text/70 leading-relaxed">
+          {{ t().services.architecture.microservices.description }}
+        </p>
+      </div>
+
+      <div
+        class="bg-brand-bg p-6 rounded-2xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 text-center group">
+        <div
+          class="w-12 h-12 mx-auto bg-white text-brand-dark rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-2xl">sync_alt</span>
+        </div>
+        <h3
+          class="font-display font-bold text-lg text-brand-accent mb-2">{{ t().services.architecture.asynchronousCommunication.title }}</h3>
+        <p class="text-sm text-brand-text/70 leading-relaxed">
+          {{ t().services.architecture.asynchronousCommunication.description }}
+        </p>
+      </div>
+
+      <div
+        class="bg-brand-bg p-6 rounded-2xl border border-gray-100 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300 text-center group">
+        <div
+          class="w-12 h-12 mx-auto bg-white text-green-600 rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-2xl">trending_up</span>
+        </div>
+        <h3
+          class="font-display font-bold text-lg text-brand-accent mb-2">{{ t().services.architecture.scale.title }}</h3>
+        <p class="text-sm text-brand-text/70 leading-relaxed">
+          {{ t().services.architecture.scale.description }}
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-brand-accent rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+      <div
+        class="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+
+      <div class="relative z-10">
+        <h3 class="font-display font-bold text-2xl md:text-3xl text-white mb-4">
+          {{ t().services.architecture.questionsTitle }}
+        </h3>
+        <p class="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
+          {{ t().services.architecture.questionsDesc }}
+        </p>
+        <a routerLink="contact"
+           class="inline-flex items-center gap-2 bg-brand-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-brand-primary transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+          {{ t().services.architecture.cta }}
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

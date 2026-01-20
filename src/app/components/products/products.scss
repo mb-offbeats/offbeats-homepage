@@ -1,0 +1,103 @@
+/* SVG Specific Styles */
+.transition-ripple {
+  fill: #cc953a;
+  animation: rippleCycle 15s ease-out infinite;
+  opacity: 0;
+}
+
+/* KORRIGIERT: Entfernen des 'translate' hier, da wir es im SVG hardcoden */
+.examples-container {
+  transform-origin: center;
+  /* Optional: scale(0.95) falls es etwas kleiner sein soll,
+     aber für perfekte Schärfe lassen wir es auf 1 */
+}
+
+/* --- Keyframes (15 seconds Loop) --- */
+
+@keyframes logoCycle {
+  /*!* Start: Zentriert bei 600, 337.5 *!*/
+  /*0% { opacity: 0; transform: translate(600px, 337.5px) scale(0.5); }*/
+  /*5% { opacity: 1; transform: translate(600px, 337.5px) scale(1.1); }*/
+  /*10% { opacity: 1; transform: translate(600px, 337.5px) scale(1); }*/
+  /*20% { opacity: 1; transform: translate(600px, 337.5px) scale(1); }*/
+
+  /*!* Move to Header: Nach oben links *!*/
+  /*30% { opacity: 1; transform: translate(180px, 90px) scale(0.7); }*/
+  /*85% { opacity: 1; transform: translate(180px, 90px) scale(0.7); }*/
+
+  /*!* Fade Out *!*/
+  /*95% { opacity: 0; transform: translate(180px, 80px) scale(0.65); }*/
+  /*100% { opacity: 0; transform: translate(600px, 337.5px) scale(0.5); }*/
+
+  /* Start: Zentriert bei 600, 337.5 */
+  0% { opacity: 0; transform: translateY(337.5px); }
+  5% { opacity: 1; transform: translateY(337.5px); }
+  10% { opacity: 1; transform: translateY(337.5px); }
+  20% { opacity: 1; transform: translateY(337.5px); }
+
+  /* Move Up: Nur in Y-Richtung nach oben */
+  30% { opacity: 1; transform: translateY(150px); }
+  85% { opacity: 1; transform: translateY(150px); }
+
+  /* Fade Out */
+  95% { opacity: 0; transform: translateY(150px); }
+  100% { opacity: 0; transform: translateY(337.5px); }
+}
+
+@keyframes rippleCycle {
+  0%, 25% { clip-path: circle(0% at 50% 100%); opacity: 0; }
+  26% { opacity: 0.7; }
+  40% { clip-path: circle(160% at 50% 100%); opacity: 0; }
+  100% { clip-path: circle(160% at 50% 100%); opacity: 0; }
+}
+
+@keyframes exampleTimingWrapper {
+  0%, 30% { opacity: 0; animation-timing-function: ease-out;}
+  38% { opacity: 1; }
+  88% { opacity: 1; }
+  96%, 100% { opacity: 0; }
+}
+
+@keyframes exampleCycle {
+  0% { clip-path: circle(0% at center); opacity: 0; transform: scale(0.85); }
+  100% { clip-path: circle(120% at center); opacity: 1; transform: scale(1); }
+}
+
+/* Class Assignments */
+.main-logo-group {
+  animation: logoCycle 15s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  transform-origin: center;
+}
+
+.example-box {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: exampleTimingWrapper 15s linear infinite;
+}
+
+.example-content {
+  animation: exampleCycle 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  clip-path: url(#rect-clip-large);
+}
+
+/* Staggered Delays */
+#ex1 { animation-delay: 0s; }
+#ex1 .example-content { animation-delay: 4.5s; }
+
+#ex2 { animation-delay: 0.2s; }
+#ex2 .example-content { animation-delay: 4.7s; }
+
+#ex3 { animation-delay: 0.4s; }
+#ex3 .example-content { animation-delay: 4.9s; }
+
+#ex4 { animation-delay: 0.6s; }
+#ex4 .example-content { animation-delay: 5.1s; }
+
+.accent-border {
+  fill: none;
+  stroke: #284b5f;
+  stroke-width: 4;
+  opacity: 0.8;
+}
+.accent-alt { stroke: #cc953a; }

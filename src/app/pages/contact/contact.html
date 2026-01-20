@@ -1,33 +1,63 @@
-<section class="w-full flex justify-center py-16">
-  <div class="w-full max-w-3xl px-4 md:px-10">
-    <h1 class="text-4xl font-bold mb-12 text-center">{{ t().contactPage.title }}</h1>
+<section class="flex-1 relative overflow-hidden bg-brand-text text-white py-32 flex flex-col justify-center">
+  <!-- Hintergrund-Pattern -->
+  <div class="absolute inset-0 opacity-5 pointer-events-none"
+       style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
 
-    <div class="p-8 space-y-6">
-      <div class="flex items-center gap-4">
-        <span class="material-symbols-outlined text-primary">business</span>
+  <div class="max-w-4xl mx-auto px-6 relative z-10 w-full">
+    <div class="text-center mb-16">
+      <span class="text-brand-primary font-bold tracking-widest uppercase text-sm mb-4 block font-display">
+        {{ t().contactPage.title }}
+      </span>
+      <h1 class="font-display font-bold text-4xl md:text-6xl mb-6">
+        Let's jam together.
+      </h1>
+      <p class="text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto">
+        {{t().contactPage.subtitle}}
+      </p>
+    </div>
+
+    <!-- Grid Layout für Kontakt-Karten -->
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- Firma -->
+      <div class="bg-[#1e1e24] p-8 rounded-3xl border border-gray-700 hover:border-brand-primary/30 transition-all duration-300 flex flex-col gap-4 group">
+        <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary border border-brand-primary/20 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-2xl">business</span>
+        </div>
         <div>
-<!--          <h2 class="font-bold">{{ t().contactPage.companyName }}</h2>-->
-          <h2 class="font-bold">offbeats Software-Solutions GmbH</h2>
-<!--          <p class="text-slate-600">offbeats Software-Solutions GmbH</p>-->
+          <span class="text-xs font-mono text-gray-500 uppercase tracking-wider mb-1 block">{{ t().contactPage.companyName }}</span>
+          <h2 class="font-display font-bold text-xl text-white">offbeats Software-Solutions GmbH</h2>
         </div>
       </div>
 
-      <div class="flex items-center gap-4">
-        <span class="material-symbols-outlined text-primary">location_on</span>
+      <!-- Adresse -->
+      <div class="bg-[#1e1e24] p-8 rounded-3xl border border-gray-700 hover:border-brand-primary/30 transition-all duration-300 flex flex-col gap-4 group">
+        <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary border border-brand-primary/20 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-2xl">location_on</span>
+        </div>
         <div>
-          <h2 class="font-bold">{{ t().contactPage.address }}</h2>
-          <p class="text-slate-600">Thüringerberg 144<br>6721 Thüringerberg<br>Österreich</p>
+          <span class="text-xs font-mono text-gray-500 uppercase tracking-wider mb-1 block">{{ t().contactPage.address }}</span>
+          <p class="font-body text-gray-300 leading-relaxed">
+            Thüringerberg 144, 6721 Thüringerberg, AT
+          </p>
         </div>
       </div>
 
-      <div class="flex items-center gap-4">
-        <span class="material-symbols-outlined text-primary">mail</span>
-        <div>
-          <h2 class="font-bold">{{ t().contactPage.email }}</h2>
-<!--          <a href="mailto:office@offbeats.at?subject=Anfrage&body=Hey%20offbeats-Team%2C%0A%0Alass%20uns%20gemeinsam%20etwas%20Gro%C3%9Fartiges%20starten!%20%F0%9F%9A%80" class="text-primary font-medium hover:underline">office@offbeats.at</a>-->
-          <a [href]="'mailto:office@offbeats.at?subject=' + t().startProject.emailSubject + '&body=' + t().startProject.emailBody" class="text-primary font-medium hover:underline">office@offbeats.at</a>
+      <!-- E-Mail (Vollbreite) -->
+      <a [href]="'mailto:office@offbeats.at?subject=' + t().startProject.emailSubject + '&body=' + t().startProject.emailBody"
+         class="md:col-span-2 bg-brand-primary p-8 rounded-3xl border border-brand-primary shadow-xl shadow-brand-primary/20 hover:bg-brand-dark transition-all duration-300 flex items-center justify-between group cursor-pointer">
+        <div class="flex items-center gap-6">
+          <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center text-white border border-white/10 group-hover:rotate-12 transition-transform">
+            <span class="material-symbols-outlined text-3xl">mail</span>
+          </div>
+          <div>
+            <span class="text-xs font-mono text-white/80 uppercase tracking-wider mb-1 block">{{ t().contactPage.email }}</span>
+            <h2 class="font-display font-bold text-2xl md:text-3xl text-white">office&#64;offbeats.at</h2>
+          </div>
         </div>
-      </div>
+        <span class="material-symbols-outlined text-white text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+      </a>
+
     </div>
   </div>
 </section>

@@ -1,16 +1,16 @@
-import {Component, inject} from '@angular/core';
+import {Component} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {LanguageService} from '../../services/language.service';
+import {NgOptimizedImage} from '@angular/common';
+import {TranslationBaseComponent} from '../../utils/translation.component';
 
 @Component({
   selector: 'app-not-found',
   imports: [
-    RouterLink
+    RouterLink,
+    NgOptimizedImage
   ],
   templateUrl: './not-found.html',
   styleUrl: './not-found.scss',
+  host: {'class': 'w-full'}
 })
-export class NotFound {
-  ls = inject(LanguageService);
-  t = this.ls.text;
-}
+export class NotFound extends TranslationBaseComponent {}

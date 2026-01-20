@@ -1,13 +1,14 @@
 import {Component, inject, signal} from '@angular/core';
 import {LanguageService} from '../../services/language.service';
-import {Router, RouterLink} from '@angular/router';
+import {Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   imports: [
     RouterLink,
-    NgOptimizedImage
+    NgOptimizedImage,
+    RouterLinkActive
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',

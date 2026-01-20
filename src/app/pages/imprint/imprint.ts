@@ -1,5 +1,5 @@
-import {Component, inject} from '@angular/core';
-import {LanguageService} from '../../services/language.service';
+import {Component} from '@angular/core';
+import {TranslationBaseComponent} from '../../utils/translation.component';
 
 @Component({
   selector: 'app-imprint',
@@ -7,7 +7,4 @@ import {LanguageService} from '../../services/language.service';
   templateUrl: './imprint.html',
   styleUrl: './imprint.scss',
 })
-export class Imprint {
-  ls = inject(LanguageService);
-  t = this.ls.text;
-}
+export class Imprint extends TranslationBaseComponent {}

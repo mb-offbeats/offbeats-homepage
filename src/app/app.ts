@@ -1,25 +1,21 @@
-import {Component, inject, signal} from '@angular/core';
-import {LanguageService} from './services/language.service';
+import {Component, signal} from '@angular/core';
 import {Navbar} from './components/navbar/navbar';
 import {RouterLink, RouterOutlet} from '@angular/router';
+import {NgOptimizedImage} from '@angular/common';
+import {TranslationBaseComponent} from './utils/translation.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     Navbar,
     RouterOutlet,
-    RouterLink
+    RouterLink,
+    NgOptimizedImage
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
+export class App extends TranslationBaseComponent {
   protected readonly title = signal('offbeats-website');
-
-  ls = inject(LanguageService);
-
-  // Helper to access the computed signal value in template cleaner
-  t = this.ls.text;
-
   currentYear = new Date().getFullYear();
 }

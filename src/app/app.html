@@ -1,17 +1,61 @@
 <div
-  class="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-background-light font-display text-slate-900">
+  class="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-background-light">
   <app-navbar></app-navbar>
 
   <main class="flex flex-1 flex-col items-center pt-16">
     <router-outlet></router-outlet>
   </main>
 
-  <footer class="mt-auto w-full flex justify-center py-8 border-t border-slate-200">
-    <div class="w-full max-w-6xl px-4 md:px-10 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-slate-500 text-sm">© {{ currentYear }} offbeats Software-Solutions GmbH. {{ t().footer.rights }}</p>
-      <div class="flex gap-4">
-        <a class="text-slate-500 hover:text-primary text-sm" routerLink="privacy-policy">{{ t().footer.privacy }}</a>
-        <a class="text-slate-500 hover:text-primary text-sm" routerLink="imprint">{{ t().footer.imprint }}</a>
+  <footer id="footer" class="pt-24 pb-4 border-t border-gray-100 bg-white w-full">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="lg:col-span-1">
+          <img ngSrc="/offbeats-logo.png" alt="offbeats" class="w-40 mb-6" height="254" width="1782">
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-brand-accent mb-6 uppercase text-xs tracking-widest">
+            {{ t().footer.connect }}
+          </h4>
+          <ul class="space-y-4 text-sm font-medium">
+            <li>
+              <a href="mailto:office@offbeats.at"
+                 class="flex items-center gap-2 hover:text-brand-primary transition-colors text-brand-text">
+                <span class="material-symbols-outlined text-lg">mail</span>
+                office&#64;offbeats.at
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-brand-accent mb-6 uppercase text-xs tracking-widest">
+            {{ t().footer.addressLabel }}
+          </h4>
+          <div class="flex items-start gap-2 text-sm leading-relaxed opacity-70">
+            <address class="not-italic font-body text-brand-text">
+              Thüringerberg 144<br>
+              6721 Thüringerberg<br>
+              Österreich
+            </address>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-brand-accent mb-6 uppercase text-xs tracking-widest">
+            {{ t().footer.legalLabel }}
+          </h4>
+          <ul class="space-y-4 text-sm opacity-60">
+            <li><a routerLink="imprint" class="hover:text-brand-primary transition-colors text-brand-text">{{ t().footer.imprint }}</a></li>
+            <li><a routerLink="privacy-policy" class="hover:text-brand-primary transition-colors text-brand-text">{{ t().footer.privacy }}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-[10px] font-mono opacity-60 uppercase tracking-widest text-brand-text">
+          © {{ currentYear }} offbeats Software-Solutions GmbH — {{ t().footer.rights }}
+        </p>
       </div>
     </div>
   </footer>

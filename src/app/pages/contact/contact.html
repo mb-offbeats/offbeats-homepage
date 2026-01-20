@@ -1,14 +1,13 @@
-<section class="flex-1 relative overflow-hidden bg-brand-text text-white py-32 flex flex-col justify-center">
-  <!-- Hintergrund-Pattern -->
+<section class="flex-1 relative overflow-hidden bg-brand-text text-white py-24 md:py-32 flex flex-col justify-center">
   <div class="absolute inset-0 opacity-5 pointer-events-none"
        style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
 
   <div class="max-w-4xl mx-auto px-6 relative z-10 w-full">
-    <div class="text-center mb-16">
+    <div class="text-center mb-12 md:mb-16">
       <span class="text-brand-primary font-bold tracking-widest uppercase text-sm mb-4 block font-display">
         {{ t().contactPage.title }}
       </span>
-      <h1 class="font-display font-bold text-4xl md:text-6xl mb-6">
+      <h1 class="font-display font-bold text-3xl md:text-6xl mb-6 break-words">
         Let's jam together.
       </h1>
       <p class="text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto">
@@ -16,22 +15,19 @@
       </p>
     </div>
 
-    <!-- Grid Layout für Kontakt-Karten -->
-    <div class="grid md:grid-cols-2 gap-6">
+    <div class="grid md:grid-cols-2 gap-4 md:gap-6">
 
-      <!-- Firma -->
-      <div class="bg-[#1e1e24] p-8 rounded-3xl border border-gray-700 hover:border-brand-primary/30 transition-all duration-300 flex flex-col gap-4 group">
+      <div class="bg-[#1e1e24] p-6 md:p-8 rounded-3xl border border-gray-700 hover:border-brand-primary/30 transition-all duration-300 flex flex-col gap-4 group">
         <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary border border-brand-primary/20 group-hover:scale-110 transition-transform">
           <span class="material-symbols-outlined text-2xl">business</span>
         </div>
         <div>
           <span class="text-xs font-mono text-gray-500 uppercase tracking-wider mb-1 block">{{ t().contactPage.companyName }}</span>
-          <h2 class="font-display font-bold text-xl text-white">offbeats Software-Solutions GmbH</h2>
+          <h2 class="font-display font-bold text-lg md:text-xl text-white break-words">offbeats Software-Solutions GmbH</h2>
         </div>
       </div>
 
-      <!-- Adresse -->
-      <div class="bg-[#1e1e24] p-8 rounded-3xl border border-gray-700 hover:border-brand-primary/30 transition-all duration-300 flex flex-col gap-4 group">
+      <div class="bg-[#1e1e24] p-6 md:p-8 rounded-3xl border border-gray-700 hover:border-brand-primary/30 transition-all duration-300 flex flex-col gap-4 group">
         <div class="w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary border border-brand-primary/20 group-hover:scale-110 transition-transform">
           <span class="material-symbols-outlined text-2xl">location_on</span>
         </div>
@@ -43,19 +39,21 @@
         </div>
       </div>
 
-      <!-- E-Mail (Vollbreite) -->
       <a [href]="'mailto:office@offbeats.at?subject=' + t().startProject.emailSubject + '&body=' + t().startProject.emailBody"
-         class="md:col-span-2 bg-brand-primary p-8 rounded-3xl border border-brand-primary shadow-xl shadow-brand-primary/20 hover:bg-brand-dark transition-all duration-300 flex items-center justify-between group cursor-pointer">
-        <div class="flex items-center gap-6">
-          <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center text-white border border-white/10 group-hover:rotate-12 transition-transform">
-            <span class="material-symbols-outlined text-3xl">mail</span>
+         class="md:col-span-2 bg-brand-primary p-6 md:p-8 rounded-3xl border border-brand-primary shadow-xl shadow-brand-primary/20 hover:bg-brand-dark transition-all duration-300 flex items-center justify-between group cursor-pointer gap-4">
+
+        <div class="flex items-center gap-4 md:gap-6 min-w-0">
+          <div class="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-2xl bg-white/20 flex items-center justify-center text-white border border-white/10 group-hover:rotate-12 transition-transform">
+            <span class="material-symbols-outlined text-2xl md:text-3xl">mail</span>
           </div>
-          <div>
+
+          <div class="min-w-0">
             <span class="text-xs font-mono text-white/80 uppercase tracking-wider mb-1 block">{{ t().contactPage.email }}</span>
-            <h2 class="font-display font-bold text-2xl md:text-3xl text-white">office&#64;offbeats.at</h2>
+            <h2 class="font-display font-bold text-xl md:text-3xl text-white break-all">office&#64;offbeats.at</h2>
           </div>
         </div>
-        <span class="material-symbols-outlined text-white text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+
+        <span class="material-symbols-outlined text-white text-3xl md:text-4xl group-hover:translate-x-2 transition-transform shrink-0">arrow_forward</span>
       </a>
 
     </div>

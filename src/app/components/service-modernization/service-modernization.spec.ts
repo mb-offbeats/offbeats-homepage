@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ServiceModernization } from './service-modernization';
+import {ServiceModernization} from './service-modernization';
 
 describe('ServiceModernization', () => {
   let component: ServiceModernization;

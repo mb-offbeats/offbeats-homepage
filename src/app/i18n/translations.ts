@@ -117,6 +117,14 @@ interface TranslationSchema {
     disclaimer: { title: string; content: string; links: string };
   };
   notFound: { title: string; subtitle: string; desc: string; cta: string };
+  footer: {
+    connect: string;
+    addressLabel: string;
+    legalLabel: string;
+    imprint: string;
+    privacy: string;
+    rights: string;
+  }
 }
 
 export const TRANSLATIONS: Record<Lang, TranslationSchema> = {
@@ -298,6 +306,14 @@ export const TRANSLATIONS: Record<Lang, TranslationSchema> = {
       desc: 'The page you are looking for doesn\'t exist or has been moved to another track.',
       cta: 'Back to Main Stage'
     },
+    footer: {
+      connect: 'Connect',
+      addressLabel: 'Address',
+      legalLabel: 'Legal',
+      imprint: 'Imprint',
+      privacy: 'Privacy Policy',
+      rights: 'All rights reserved.'
+    }
   },
   de: {
     nav: {
@@ -480,5 +496,13 @@ export const TRANSLATIONS: Record<Lang, TranslationSchema> = {
       desc: 'Die Seite, nach der Sie suchen, existiert nicht oder wurde auf eine andere Bühne verschoben.',
       cta: 'Zurück zur Startseite'
     },
+    footer: {
+      connect: 'Kontakt',
+      addressLabel: 'Adresse',
+      legalLabel: 'Rechtliches',
+      imprint: 'Impressum',
+      privacy: 'Datenschutz',
+      rights: 'Alle Rechte vorbehalten.'
+    }
   }
 }

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ReadyToBuild } from './ready-to-build';
+import {ReadyToBuild} from './ready-to-build';
 
 describe('ReadyToBuild', () => {
   let component: ReadyToBuild;

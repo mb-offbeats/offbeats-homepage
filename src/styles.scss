@@ -55,24 +55,24 @@ body {
   transition: opacity 0.5s ease-in-out;
   opacity: 1;
 }
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #fcfcfc;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #be1948;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #f8003d;
-}
+//
+///* Custom Scrollbar */
+//::-webkit-scrollbar {
+//  width: 10px;
+//}
+//
+//::-webkit-scrollbar-track {
+//  background: #fcfcfc;
+//}
+//
+//::-webkit-scrollbar-thumb {
+//  background: #be1948;
+//  border-radius: 5px;
+//}
+//
+//::-webkit-scrollbar-thumb:hover {
+//  background: #f8003d;
+//}
 
 .text-gradient {
   background: linear-gradient(135deg, #f8003d, #843352);
@@ -80,41 +80,43 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-
-//
-//body {
-//  color: var(--color-background-dark);
-//}
-//
 ///* Animation Utilities */
-//@keyframes fade-in-up {
-//  0% { opacity: 0; transform: translateY(20px); }
-//  100% { opacity: 1; transform: translateY(0); }
-//}
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 //
-//.animate-appear {
-//  animation: fade-in-up 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-//}
-//
-//
-////body { background-color: #2a2c35; } /* Outer bg for overscroll */
-//.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; }
-//.no-scrollbar::-webkit-scrollbar { display: none; }
-//
-///* Initial States */
-//.gsap-fade-up { opacity: 0; transform: translateY(30px); }
-//.gsap-scale-in { opacity: 0; transform: scale(0.95); }
-//.gsap-slide-in { opacity: 0; transform: translateX(30px); }
-//
-//.stack-grid {
-//  display: grid;
-//  grid-template-areas: "stack";
-//  place-items: center;
-//  width: 100%;
-//}
-//.stack-item {
-//  grid-area: stack;
-//  width: 100%;
-//  max-width: 400px;
-//  will-change: transform, opacity;
-//}
+.animate-appear {
+  animation: fade-in-up 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+
+/* Define the keyframes for the movement */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Starts 30px lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base animation class */
+.animate-hero-entry {
+  opacity: 0; /* Initially hidden */
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Delay utilities to create the staggered effect */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }

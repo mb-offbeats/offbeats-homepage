@@ -1,10 +1,12 @@
-import {Component, inject} from '@angular/core';
-import {LanguageService} from '../../services/language.service';
+import {Component} from '@angular/core';
 import {TranslationBaseComponent} from '../../utils/translation.component';
+import {AnimateOnScrollDirective} from '../../utils/animate-on-scroll.directive';
 
 @Component({
   selector: 'app-keywords',
-  imports: [],
+  imports: [
+    AnimateOnScrollDirective
+  ],
   templateUrl: './keywords.html',
   styleUrl: './keywords.scss',
 })

@@ -217,7 +217,7 @@ export const TRANSLATIONS: Record<Lang, TranslationSchema> = {
       },
       development: {
         badge: 'Creation',
-        title: {line1: 'Software Development', line2: 'für Visionäre.'},
+        title: {line1: 'Software Development', line2: 'for Visionaries.'},
         description: 'We don’t just write code – we live it. For us, software development is modern craftsmanship. Instead of rigid off-the-shelf tools, we build <strong>bespoke digital platforms</strong> that start exactly where your business needs the decisive edge.',
         cta: 'Start Your Project',
         outOfTheBoxTitle: 'When "Out-of-the-Box" isn’t enough.',
